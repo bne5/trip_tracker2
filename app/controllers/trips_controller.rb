@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
 
-	before_action :set_trip, only: [:show, :edit, :destroy]
+	before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@trips = current_user.trips
@@ -10,8 +10,7 @@ class TripsController < ApplicationController
   end
 	
 	def new
-		@trip = Trip.new()
-	
+		@trip = Trip.new
 	end
 	
 	def create
@@ -23,13 +22,12 @@ class TripsController < ApplicationController
 		end
 	end
 
-	def edit
-		
+	def edit	
 	end
 
 	def update
 		if @trip.update(trip_params)
-      redirect_to accounts_path
+      redirect_to trips_path
     else
       render :edit
     end
@@ -46,8 +44,9 @@ class TripsController < ApplicationController
 	
 	private
 		def set_trip
-			@trip = Trip.find(params[:id])
+			@trip = current_user.trips.find(params[:id])
 		end
+
 		def trip_params
 			params.require(:trip).permit(:name, :start_date, :end_date)
 		end
