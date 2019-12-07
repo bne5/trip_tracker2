@@ -1,8 +1,8 @@
 <div class="ui grid container">
   <div class="four wide column">
     <h1><%= @trip.name %></h1>
-            <h3><%= @location.name %></h3>
-            <h3><%= @location.days %></h3>
+            <h2><%= @location.name %></h3>
+            <h3><%= @location.days %> days </h3>
             <%= link_to 'View Address', location_addresses_path(@location), class: "ui blue button inverted" %>
             <%= link_to 'Edit Location', edit_trip_location_path(@trip, @location), class: "ui green button inverted" %>
             <%= link_to "Delete Location", trip_location_path(@trip, @location), method: :delete, class: "ui red button inverted" %>

@@ -19,7 +19,7 @@ class AddressesController < ApplicationController
   def create
     @address = @location.addresses.new(address_params)
     if @address.save
-      redirect_to trip_locations_path(@location)
+      redirect_to location_addresses_path(@location)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to trip_locations_path
+    redirect_to location_addresses_path
   end
 
   private
