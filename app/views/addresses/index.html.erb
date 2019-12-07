@@ -1,5 +1,5 @@
 <h1>Adresses</h1>
-<%= link_to "Add Address", new_location_address_path(@location) %>
+<%= link_to "Add Address", new_location_address_path(@location), class: "ui basic teal button" %>
 <hr />
 <% @addresses.each do |address| %>
   <div class="card-panel hoverable">
@@ -7,8 +7,8 @@
         <h3><%= address.city %></h3>
         <h3><%= address.state %></h3>
         <h3><%= address.zip %></h3>
-        <%= link_to "Edit Address", edit_location_address_path(@location, address), class: "ui blue button inverted" %>
-        <%= link_to "Delete Address", [@location, address], method: :delete, class: "ui red button inverted" %>
+        <%= link_to "Edit Address", edit_location_address_path(@location, address), class: "ui basic teal button" %>
+        <%= link_to "Delete Address", [@location, address], method: :delete, class: "ui basic red button" %>
 <% end %>
-  </div>
+</div>
 

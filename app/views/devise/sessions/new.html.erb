@@ -1,6 +1,6 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with(model: resource, as: resource_name, url: session_path(resource_name), class:"ui form") do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
@@ -22,7 +22,6 @@
     <%= f.submit "Log in", class:"ui basic teal small button"%>
   </div>
 <% end %>
-</form>
 
 
 <%= render "devise/shared/links" %>
