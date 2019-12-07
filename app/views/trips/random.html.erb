@@ -1,4 +1,22 @@
-<h1>5 Random Trips</h2>
-<% @randoms.each do |trip| %>
-	<h2> <%= trip.name %> </h2>
-<% end %>
+<div class="ui center aligned header">	
+	<h3 class="padding1">Check Out These </h3>
+	<h2>5 Random Trips</h2>
+</div>
+<br/> 
+<div class="ui grid container "> 
+	<%@randoms.each do |trip|%>
+	 <div class="sixteen wide mobile eight wide tablet four wide computer column">
+    <div class="ui card"> 
+      <div class="ui inverted segment"> 
+        <div class="content">
+          <div class="ui inverted segment"> 
+            <div class="ui center aligned header">
+							<%= trip.name%>
+						</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<%end%>
+	</div>
