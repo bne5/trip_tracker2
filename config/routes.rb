@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root 'reviews#index'
+	root 'trips#index'
   devise_for :users
 
 	get 'random', to: 'trips#random'

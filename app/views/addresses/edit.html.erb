@@ -1,7 +1,7 @@
 <h1>Edit An Address</h1>
 <%= form_with(model: [@location, @address], local: true, class: "ui form") do |f| %>
   <%= f.label :street %>
-  <%= f.text_area :street, required: true, autofocus: true, placeholder: "State" %>
+  <%= f.text_field :street, required: true, autofocus: true, placeholder: "State" %>
   <br />
   <%= f.label :city %>
   <%= f.text_field :city, required: true, placeholder: "City" %>
