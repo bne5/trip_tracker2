@@ -1,0 +1,14 @@
+<h1><%= @trip.id ? "edit Trip" : "create Trip" %></h1>
+<hr />
+<%= form_for [@trip] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.label :start_date %>
+  <%= f.datetime_select :start_date, required: true %>
+  <br />
+  <%= f.label :end_date %>
+  <%= f.datetime_select :end_date, required: true %>
+  <br />
+  <%= f.submit %>
+  <% end %>
