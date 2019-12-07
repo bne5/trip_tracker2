@@ -5,9 +5,9 @@
         <h3><%= address.city %></h3>
         <h3><%= address.state %></h3>
         <h3><%= address.zip %></h3>
-        <%= link_to "Add Address", new_location_address_path(@location) %>
+        <%= link_to "Edit Address", edit_location_address_path(@location, address) %>
         <%= link_to "Delete Address", [@location, address], method: :delete %>
-        <%= link_to "Back", boards_path %>
 <% end %>
   </div>
 
+  <%= link_to "Add Address", new_location_address_path(@location) %>
