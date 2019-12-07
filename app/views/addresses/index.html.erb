@@ -1,8 +1,8 @@
-<h1>Adresss</h1>
+<h1>Adresses</h1>
 <% @addresses.each do |address| %>
   <div class="card-panel hoverable">
-        <h1><%= address.name %></h1>
-        <h3><%= address.desc %></h3>
+        <h1><%= address.street %></h1>
+        <h3><%= address.zip %></h3>
         <%= link_to "Add Address", new_location_address_path(@location) %>
         <%= link_to "Delete Address", [@location, address], method: :delete %>
         <%= link_to "Back", boards_path %>
