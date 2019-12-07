@@ -1,6 +1,7 @@
 <h1>Address</h1>
 <% @location.addresses.each do |address| %>
-  <div class="card-panel hoverable">
+  <div class="ui grid container">
+  <div class="four wide column">
         <h3><%= address.street %></h3>
         <h3><%= address.city %></h3>
         <h3><%= address.state %></h3>
@@ -8,6 +9,7 @@
         <%= link_to "Edit Address", edit_location_address_path(@location, address), class: "ui basic teal button" %>
         <%= link_to "Delete Address", [@location, address], method: :delete, class: "ui basic teal button" %>
 <% end %>
+  </div>
   </div>
 
   <br />

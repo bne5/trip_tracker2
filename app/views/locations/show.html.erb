@@ -1,16 +1,14 @@
-<div class="ui grid container">
-  <div class="four wide column">
-    <h1><%= @trip.name %></h1>
-            <h2><%= @location.name %></h3>
-            <h3><%= @location.days %> days </h3>
-            <%= link_to 'View Address', location_addresses_path(@location), class: "ui basic teal button" %>
-            <%= link_to 'Edit Location', edit_trip_location_path(@trip, @location), class: "ui basic teal button" %>
-            <%= link_to "Delete Location", trip_location_path(@trip, @location), method: :delete, class: "ui basic red button" %>
-    <hr />
-    <br />
+<div class="ui container">
+<br/>
+<div class="ui center aligned header">
+<h1 class="ui huge header"> <%= @location.name %> </h1>
+<h2><i> <%= @location.days %> days - <%= @trip.name %> </i></h2>
+</div>
+<hr />
+<br />
+<center>
+    <%= link_to 'View Address', location_addresses_path(@location), class: "ui basic teal button" %>
+    <%= link_to 'Edit Location', edit_trip_location_path(@trip, @location), class: "ui basic teal button" %>
     <%= link_to 'Back', trip_locations_path(@trip), class: "ui basic teal button" %>
-    <br />
-    <br />
-    <br />
-  </div>
-  </div>
+    <%= link_to "Delete Location", trip_location_path(@trip, @location), method: :delete, class: "ui basic red button" %>
+</center>
