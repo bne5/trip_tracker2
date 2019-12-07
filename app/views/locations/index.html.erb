@@ -1,14 +1,18 @@
-<h1><%= @trip.name %>: Locations</h1>
-<%= link_to 'Add Location', new_trip_location_path(@trip), class: "ui basic green button" %>
+<div class="ui container">
 <br/>
+<div class="ui center aligned header">
+<h1 class="ui huge header"><%= @trip.name %> - Locations </h1>
+<%= link_to 'Add Location', new_trip_location_path(@trip), class: "ui basic teal button" %>
+</div>
 <hr />
+<br/>
 <div class="ui grid container">
   <div class="four wide column">
 <% @trip.locations.each do |location| %>
  <h3> <%= location.name %> </h3>
-<%= link_to "View Location", trip_location_path(@trip, location), class: "ui basic teal button" %>
-
- <%= link_to 'View Address', location_addresses_path(location), class: "ui basic teal button" %>
+    <%= link_to "View Location", trip_location_path(@trip, location), class: "ui basic teal button" %>
+    <br />
+    <%= link_to 'View Address', location_addresses_path(location), class: "ui basic teal button" %>
  <% end %> 
  <br/>
 <br/>

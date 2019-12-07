@@ -1,14 +1,21 @@
-<h1>Adresses</h1>
-<%= link_to "Add Address", new_location_address_path(@location), class: "ui basic teal button" %>
+<div class="ui container">
+<br/>
+<div class="ui center aligned header">
+<h1 class="ui huge header"> Address </h1>
+<%= link_to 'Add Address', new_location_address_path(@location), class: "ui basic teal button" %>
+</div>
 <hr />
 <% @addresses.each do |address| %>
-  <div class="card-panel hoverable">
-        <h1><%= address.street %></h1>
-        <h3><%= address.city %></h3>
-        <h3><%= address.state %></h3>
-        <h3><%= address.zip %></h3>
+  <br />
+  <div class="ui grid container">
+  <div class="four wide column">
+        <h3><%= address.street %></h3>
+        <h4><%= address.city %></h4>
+        <h4><%= address.state %></h4>
+        <h4><%= address.zip %></h4>
         <%= link_to "Edit Address", edit_location_address_path(@location, address), class: "ui basic teal button" %>
         <%= link_to "Delete Address", [@location, address], method: :delete, class: "ui basic red button" %>
 <% end %>
+</div>
 </div>
 

@@ -4,16 +4,18 @@
     <h1 class="ui huge header"><%= @trip.name %></h1>
   </div>
     <hr />
-    <h3> Start Date: <%= @trip.start_date.strftime("%F") %> </h3>
-    <h3> End Date: <%= @trip.end_date.strftime("%F") %></h3>
-    <br />
+    <h3><i> Start Date </i>: <%= @trip.start_date.strftime("%F") %> </h3>
+     <h3> <i>End Date: </i><%= @trip.end_date.strftime("%F") %></h3>
+  <br />
   </div>
   <hr />
   <br />
+  <center>
   <%= link_to "Locations", trip_locations_path(@trip), class: "ui basic teal button" %>
   <%= link_to "Add Review", new_review_path, class: "ui basic teal button" %>
   <%= link_to "Edit Trip", edit_trip_path, class: "ui basic teal button" %>
   <%= link_to "Delete Trip", [@trip], method: :delete, class: "ui basic red button" %>
   <%= link_to "Back to Trips", trip_locations_path(@trip), class: "ui basic teal button" %>
+  </center>
 </div>
 
