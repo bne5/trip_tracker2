@@ -1,14 +1,14 @@
-<h1><%= @review.id ? "edit review" : "create review" %></h1>
+<h1><%= @review.id ? "Edit Review" : "Create Review" %></h1>
 <hr />
-<%= form_with(model:@review,local:true, class: "ui form") do |f| %>
-  <%= f.label :raiting %>
-  <%= f.number_field :raiting, required: true, autofocus: true %>
+<%= form_with(model: @review, local: true, class: "ui form") do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, required: true, autofocus: true %>
   <br />
 
   <%= f.label :body %>
   <%= f.text_field :body, required: true %>
   <br />
 
+  <%= f.submit nil, class: "ui teal basic button" %>
   
-  <%= f.submit %>
   <% end %>

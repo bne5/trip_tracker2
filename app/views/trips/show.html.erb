@@ -1,15 +1,15 @@
   <div class="ui container">
     <br/>
-    <h1><%= @trip.name %> </h1>
-    <br/>
-    <h3> Start Date: </h3>
-    <h3><%=  @trip.start_date.strftime("%F") %> </h3>
-    <br/>
-    <h3> End Date: </h3>
-    <h3><%=  @trip.end_date.strftime("%F") %></h3>
+  <div class="ui center aligned header">
+    <h1 class="ui huge header"><%= @trip.name %></h1>
   </div>
-
+    <hr />
+    <h3> Start Date: <%= @trip.start_date.strftime("%F") %> </h3>
+    <h3> End Date: <%= @trip.end_date.strftime("%F") %></h3>
+    <br />
+  </div>
   <hr />
+  <br />
   <%= link_to "Locations", trip_locations_path(@trip), class: "ui basic teal button" %>
   <%= link_to "Add Review", new_review_path, class: "ui basic teal button" %>
   <%= link_to "Edit Trip", edit_trip_path, class: "ui basic teal button" %>
