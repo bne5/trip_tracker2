@@ -13,5 +13,8 @@
   <%= f.text_field :zip, required: true, placeholder: "Zip" %>
   <br />
   <br />
-  <%= f.submit nil, class: "ui button blue inverted" %>
+  <%= f.submit nil, class: "ui basic teal button" %>
 <% end %>
+<br />
+
+<%= link_to "Back", location_addresses_path(@location), class: "ui red basic button" %>

@@ -11,11 +11,9 @@ class LocationsController < ApplicationController
 
   def new
     @location = @trip.locations.new
-    render partial: "form"
   end
 
   def edit
-    render partial: "form"
   end
 
   def create
