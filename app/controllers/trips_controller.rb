@@ -39,6 +39,10 @@ class TripsController < ApplicationController
 		@trip.destroy
 		redirect_to trips_path
 	end
+
+	def random
+		@randoms = current_user.trips.sample(5)
+	end
 	
 	private
 		def set_trip

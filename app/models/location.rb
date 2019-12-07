@@ -1,4 +1,4 @@
 class Location < ApplicationRecord
   belongs_to :trip
-  has_many :addresses, dependent: :destroy
+  has_one :address, dependent: :destroy
 end

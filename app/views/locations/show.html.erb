@@ -1,9 +1,12 @@
-<div class="ui card">
-  <div class="content">
-    <p class="header">
-      <%= @location.name %>
-    </p>
-    <%= link_to 'Edit', edit_location_path(@location) %> |
-    <%= link_to 'Back', locations_path %>
+<div class="ui grid container">
+  <div class="four wide column">
+    <h1><%= @trip.name %></h1>
+    <hr />
+    <br />
+    <%= link_to 'Locations', trip_locations_path(@trip), class: "ui primary button inverted" %>
+    <br />
+    <br />
+    <br />
+    <%= link_to "Delete Trip", @trip, method: :delete, class: "ui red button inverted" %>
   </div>
 </div>
