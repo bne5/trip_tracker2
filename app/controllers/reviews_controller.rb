@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
 
 	def edit
 		unless owner?
-			redirect_to @review
+			redirect_to reviews_path
 		end
 	end
 	
@@ -38,9 +38,10 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		unless owner?
-			redirect_to @review
+			redirect_to reviews_path
+		else
+			@review.destroy
 		end
-		@review.destroy
 	end
 	
 	private 
