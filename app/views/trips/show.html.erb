@@ -7,9 +7,9 @@
   <h3> End Date: </h3>
   <h3><%=  @trip.end_date %></h3>
   <hr />
-  <%= link_to "Locations", trip_locations_path(@trip) %>
-  <%= link_to "Edit Trip", edit_trip_path %>
-  <%= link_to "Delete Trip", [@trip], method: :delete %>
-  <%= link_to "Back to Trips", trip_path %>
+  <%= link_to "Locations", trip_locations_path(@trip), class: "ui blue button inverted" %>
+  <%= link_to "Edit Trip", edit_trip_path, class: "ui blue button inverted" %>
+  <%= link_to "Delete Trip", [@trip], method: :delete, class: "ui red button inverted" %>
+  <%= link_to "Back to Trips", trip_locations_path(@trip), class: "ui blue button inverted" %>
 </div>
 
