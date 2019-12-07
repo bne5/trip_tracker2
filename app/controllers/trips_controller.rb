@@ -22,7 +22,7 @@ class TripsController < ApplicationController
 		end
 	end
 
-	def edit
+	def edit	
 	end
 
 	def update
@@ -46,6 +46,7 @@ class TripsController < ApplicationController
 		def set_trip
 			@trip = current_user.trips.find(params[:id])
 		end
+
 		def trip_params
 			params.require(:trip).permit(:name, :start_date, :end_date)
 		end

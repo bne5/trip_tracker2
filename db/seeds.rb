@@ -7,7 +7,9 @@ until User.all.length > 3
 	user = User.create(
 		:email                 => "test#{str}@test.com",
 		:password              => "password",
-		:password_confirmation => "password"
+		:password_confirmation => "password",
+		:first_name => Faker::Name.first_name,
+		:last_name => Faker::Name.last_name
 	)
 	puts "New User! #{user.id}"
 	i+=1

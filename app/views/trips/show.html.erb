@@ -1,5 +1,6 @@
-  <div class="ui container" >
-    <h1>Trip: <%= @trip.name %> </h1>
+  <div class="ui container">
+    <br/>
+    <h1><%= @trip.name %> </h1>
     <br/>
     <h3> Start Date: </h3>
     <h3><%=  @trip.start_date.strftime("%F") %> </h3>
@@ -9,6 +10,7 @@
   </div>
 
   <hr />
+  <%= link_to "Add Review", new_review_path, class: "ui basic teal button" %>
   <%= link_to "Locations", trip_locations_path(@trip), class: "ui basic teal button" %>
   <%= link_to "Edit Trip", edit_trip_path, class: "ui basic teal button" %>
   <%= link_to "Delete Trip", [@trip], method: :delete, class: "ui basic red button" %>
