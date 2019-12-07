@@ -1,13 +1,15 @@
-<h1>Reviews#index</h1>
-<h2>Current User: <%=current_user.id%> </h2>
-<ul>
+<h1 class="ui huge header">Reviews</h1>
+<div class="ui divider"></div>
+<div class ="ui grid">
 	<% @reviews.each do |review|%>
-		<li>
-			<h3> User: <%=review.user.id%> </h3>
-			<%=review.author + " #{review.rating}"%>
-			<%=review.body%>
-			<%= link_to 'Edit', edit_review_path(review) %>
-			<%= link_to 'Delete', [review], method: :delete %>
-		</li>
+		<div class="four wide column">
+			<div class="ui item">
+				<div class="ui medium header"> <%= link_to review.trip.name, [review]%> </div>
+				<a class="ui teal label">
+					<%=review.author%>
+					<div class="detail"><%="#{review.rating}/100"%></div>
+				</a>
+			</div>
+		</div>
 	<%end%>
-</ul>
+</div>
