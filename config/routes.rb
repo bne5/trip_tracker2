@@ -5,13 +5,13 @@ Rails.application.routes.draw do
 	get 'random', to: 'trips#random'
 
 	resources :trips do
-    resources :locations
+		resources :locations
+		resources :reviews, :only => [:show,:new,:edit]
   end
 
   resources :locations do
     resources :addresses
 	end
 	
-	resources :reviews
-  
+	resources :reviews, :except => [:show, :new, :edit]
 end

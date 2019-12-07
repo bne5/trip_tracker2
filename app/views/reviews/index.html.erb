@@ -4,7 +4,7 @@
 	<% @reviews.each do |review|%>
 		<div class="four wide column">
 			<div class="ui item">
-				<div class="ui medium header"> <%= link_to review.trip.name, [review]%> </div>
+				<div class="ui medium header"> <%= link_to review.trip.name, trip_review_path(review.trip,review) %> </div>
 				<a class="ui teal label">
 					<%=review.author%>
 					<div class="detail"><%="#{review.rating}/100"%></div>

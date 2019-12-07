@@ -15,7 +15,10 @@
       </a>
       <a class="item">
         <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:"ui teal inverted small header"  %>
-    </a>
+			</a>
+			<a class="right item">
+				<%= "#{current_user.first_name} #{current_user.last_name}"%>
+			</a>
     <% else %>
       <h2 class="ui center aligned inverted white header"> Welcome</h2>   
     <% end %>

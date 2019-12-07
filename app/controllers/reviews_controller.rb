@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 	before_action :set_review, only: [:show, :edit, :destroy]
-	before_action :set_owner, only: [:edit, :destroy]
+	before_action :set_trip, only: [:show, :edit, :destroy]
 	def index
 		@reviews = Review.all
   end
@@ -47,10 +47,6 @@ class ReviewsController < ApplicationController
 
 		def set_trip
 			@trip = Trip.find(params[:trip_id])
-		end
-
-		def set_owner
-			@is_owner = current_user.id == @review.user_id
 		end
 
 		def review_params
