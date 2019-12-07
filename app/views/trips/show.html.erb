@@ -1,10 +1,10 @@
-<h1> @trip.name </h1>
+<h1> <%= @trip.name %> </h1>
 <br/>
-<h2> @trip.start_date </h2>
+<h2> <%=  @trip.start_date %> </h2>
 <br/>
-<h2> @trip.end_date </h2>
+<h2><%=  @trip.end_date %></h2>
 <hr />
-<%= link_to "Edit Trip" edit_trip_path %>
-<%= link_to "Delete Trip" [@trip], method: :delete %>
-<%= link_to "back to Trips" trip_path %>
+<%= link_to "Edit Trip", edit_trip_path %>
+<%= link_to "Delete Trip", [@trip], method: :delete %>
+<%= link_to "Back to Trips", trip_path %>
 
