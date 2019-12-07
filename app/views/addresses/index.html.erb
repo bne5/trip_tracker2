@@ -1,2 +1,11 @@
-<h1>Addresses#index</h1>
-<p>Find me in app/views/addresses/index.html.erb</p>
+<h1>Adresss</h1>
+<% @addresses.each do |address| %>
+  <div class="card-panel hoverable">
+        <h1><%= address.name %></h1>
+        <h3><%= address.desc %></h3>
+        <%= link_to "Add Address", new_location_address_path(@location) %>
+        <%= link_to "Delete Address", [@location, address], method: :delete %>
+        <%= link_to "Back", boards_path %>
+<% end %>
+  </div>
+
