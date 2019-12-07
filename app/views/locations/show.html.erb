@@ -1,9 +1,8 @@
-<div class="ui container">
-  <div class="ui segment">
-    <p class="header">
-      <%= @location.name %>
-    </p>
-    <%= link_to 'Edit', edit_location_path(@location), class:"ui teal basic button" %> |
-    <%= link_to 'Back', locations_path, class:"ui red basic button" %>
-  </div>
-</div>
+<h1><%= @trip.name %></h1>
+<hr />
+<br />
+<%= link_to 'Locations', trip_locations_path(@trip), class: "ui primary button inverted" %>
+<br />
+<br />
+<br />
+<%= link_to "Delete Trip", @trip, method: :delete, class: "ui red button inverted" %>
