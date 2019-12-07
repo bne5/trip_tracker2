@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2 class="ui basic medium header">Log in</h2>
 
 <%= form_with(model: resource, as: resource_name, url: session_path(resource_name), class:"ui form") do |f| %>
   <div class="field">
@@ -22,7 +22,6 @@
     <%= f.submit "Log in", class:"ui basic teal small button"%>
   </div>
 <% end %>
-
-
+<br />
 <%= render "devise/shared/links" %>
 </div>

@@ -1,20 +1,25 @@
 <div class="ui inverted segment">
   <div class="ui secondary inverted pointing menu ">
-    <a class="item">
-      <%= link_to 'Trips', trips_path, class:"ui teal inverted small header" %>
+    <% if current_user %>
+      <a class="item">
+        <%= link_to 'Trips', trips_path, class:"ui teal inverted small header" %>
+      </a>
+      <a class="item">
+        <%= link_to 'Reviews', reviews_path, class:"ui teal inverted small header"  %>
+      </a>
+      <a class="item">
+        <%= link_to 'Random Trips', random_path, class:"ui teal inverted small header"  %>
+      </a>
+      <a class="item">
+        <%= link_to 'Add Trip', new_trip_path, class:"ui teal inverted small header"  %>
+      </a>
+      <a class="item">
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:"ui teal inverted small header"  %>
     </a>
-    <a class="item">
-      <%= link_to 'Reviews', reviews_path, class:"ui teal inverted small header"  %>
-    </a>
-    <a class="item">
-      <%= link_to 'Random Trips', random_path, class:"ui teal inverted small header"  %>
-    </a>
-		<a class="item">
-			<%= link_to 'Add Trip', new_trip_path, class:"ui teal inverted small header"  %>
-		</a>
-    <a class="item">
-      <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:"ui teal inverted small header"  %>
-   </a>
+    <% else %>
+      <h2 class="ui center aligned inverted white header"> Welcome</h2>   
+    <% end %>
   </div>
-  </div>
+</div>
+
 
