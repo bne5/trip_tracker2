@@ -1,12 +1,11 @@
 <div class="ui grid container">
   <div class="four wide column">
     <h1><%= @trip.name %></h1>
-    <% @trip.locations.each do |location| %>
-            <h3><%= location.name %></h3>
-            <h3><%= location.days %></h3>
-            <%= link_to 'Address', location_addresses_path(@location) %>
-            <%= link_to "Delete Location", @trip, method: :delete, class: "ui red button inverted" %>
-    <% end %>
+            <h3><%= @location.name %></h3>
+            <h3><%= @location.days %></h3>
+            <%= link_to 'View Address', location_addresses_path(@location), class: "ui blue button inverted" %>
+            <%= link_to 'Edit Location', edit_trip_location_path(@trip, @location), class: "ui green button inverted" %>
+            <%= link_to "Delete Location", trip_location_path(@trip, @location), method: :delete, class: "ui red button inverted" %>
     <hr />
     <br />
     <%= link_to 'Back', trip_locations_path(@trip), class: "ui primary button inverted" %>
@@ -14,4 +13,4 @@
     <br />
     <br />
   </div>
-</div>
+  </div>
