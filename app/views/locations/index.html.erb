@@ -1,4 +1,13 @@
 <h1><%= @trip.name %>: Locations</h1>
+
+<% @trip.locations.each do |location| %>
+ <%= location.name %>
+
+ <%= link_to 'Address', location_addresses_path(location) %>
+ 
+ <% end %> 
+
 <%= link_to 'Add Location', new_trip_location_path(@trip) %>
-<%= link_to "Address", location_addresses_path(@locations) %>
+
+
 <hr />
