@@ -10,6 +10,7 @@
   </div>
 
   <hr />
+  <%= link_to "add review", new_review_path, class: "ui blue button inverted" %>
   <%= link_to "Locations", trip_locations_path(@trip), class: "ui blue button inverted" %>
   <%= link_to "Edit Trip", edit_trip_path, class: "ui blue button inverted" %>
   <%= link_to "Delete Trip", [@trip], method: :delete, class: "ui red button inverted" %>
