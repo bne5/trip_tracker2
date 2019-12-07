@@ -8,10 +8,14 @@
     <h3> End Date: </h3>
     <h3><%=  @trip.end_date.strftime("%F") %></h3>
   </div>
-
-  <hr />
+<div class="ui divider"></div>
+<div class="ui container">
+	<div class="ui button basic">
+		<%= link_to 'Add Review', new_review_path(@trip) %>
+	</div>
+</div>
+<div class ="ui divider"></div>
   <%= link_to "Locations", trip_locations_path(@trip), class: "ui basic teal button" %>
-  <%= link_to "Add Review", new_review_path, class: "ui basic teal button" %>
   <%= link_to "Edit Trip", edit_trip_path, class: "ui basic teal button" %>
   <%= link_to "Delete Trip", [@trip], method: :delete, class: "ui basic red button" %>
   <%= link_to "Back to Trips", trip_locations_path(@trip), class: "ui basic teal button" %>

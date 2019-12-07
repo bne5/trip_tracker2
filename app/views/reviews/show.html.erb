@@ -1,1 +1,22 @@
 
+<div class="ui container">
+	<div class="ui header">Author: <%= @review.author %></div>
+	<div class="ui red label"> <%="#{@review.rating}/100"%></div>
+</div>
+<% if @is_owned %>
+	<div class="ui button red">
+			<%= link_to "Delete Review", [@review], method: :delete %>
+	</div>
+	<div class="ui button green">
+		<%= link_to "Edit Review", edit_review_path(@review)%>
+	</div>
+<%end%>
+<div class="ui divider"><div>
+<div class="ui text container">
+	<%=@review.body%>
+</div>
+<br />
+<div class="ui button basic">
+	<%= link_to "Back to Reviews", reviews_path %>
+</div>
+
