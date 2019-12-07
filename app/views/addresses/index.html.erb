@@ -2,6 +2,8 @@
 <% @addresses.each do |address| %>
   <div class="card-panel hoverable">
         <h1><%= address.street %></h1>
+        <h3><%= address.city %></h3>
+        <h3><%= address.state %></h3>
         <h3><%= address.zip %></h3>
         <%= link_to "Add Address", new_location_address_path(@location) %>
         <%= link_to "Delete Address", [@location, address], method: :delete %>
