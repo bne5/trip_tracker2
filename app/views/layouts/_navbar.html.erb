@@ -4,8 +4,11 @@
       <%= link_to 'Trips', trips_path %>
     </a>
     <a class="item">
-      <%= link_to 'Add Trip', new_trip_path %>
+      <%= link_to 'Random Trips', random_path %>
     </a>
+		<a class="item">
+			<%= link_to 'Add Trip', new_trip_path %>
+		</a>
     <a class="item">
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
    </a>
