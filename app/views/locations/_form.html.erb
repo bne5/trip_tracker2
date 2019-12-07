@@ -1,4 +1,4 @@
-<%= form_with(model: location, local: true, class: "ui form") do |f| %>
+<%= form_for [@location] do |f| %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, required: true, placeholder: "Name" %>
@@ -7,4 +7,5 @@
     <%= f.label :day %>
     <%= f.text_field :day, required: true, placeholder: "Day" %>
   </div>
+  <%= f.submit %>
 <% end %>

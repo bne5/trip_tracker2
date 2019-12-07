@@ -1,2 +1,17 @@
-<h1>Addresses#edit</h1>
-<p>Find me in app/views/addresses/edit.html.erb</p>
+<h1>Edit An Address</h1>
+<%= form_with(model: [@location, @address], local: true, class: "ui form") do |f| %>
+  <%= f.label :street %>
+  <%= f.text_area :street, required: true, autofocus: true, placeholder: "State" %>
+  <br />
+  <%= f.label :city %>
+  <%= f.text_field :city, required: true, placeholder: "City" %>
+  <br />
+  <%= f.label :state %>
+  <%= f.text_field :state, required: true, placeholder: "State" %>
+  <br />
+  <%= f.label :zip %>
+  <%= f.text_field :zip, required: true, placeholder: "Zip" %>
+  <br />
+  <br />
+  <%= f.submit nil, class: "ui button blue inverted" %>
+<% end %>

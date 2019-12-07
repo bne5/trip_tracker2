@@ -7,24 +7,24 @@ class TripsController < ApplicationController
   end
 
 	def show
-	
   end
-
+	
 	def new
 		@trip = Trip.new()
+		render partial: "form"
 	end
 	
 	def create
-		@trip = Trip.new(trip_params)
+		@trip = current_user.trips.new(trip_params)
 		if @trip.save
-			redirect_to @trip
+			redirect_to trips_path
 		else
 			render :new
 		end
 	end
 
 	def edit
-		
+		render partial: "form"
 	end
 
 	def update

@@ -1,16 +1,16 @@
-<nav>
-  <ul>
-    <li>
+
+  <div class="ui secondary pointing menu nav-bar-padding">
+    <a class="item">
       <%= link_to 'Trips', trips_path %>
-    </li>
-    <li>
+    </a>
+    <a class="item">
       <%= link_to 'Random Trips', random_path %>
-    </li>
-		<li>
+    </a>
+		<a class="item">
 			<%= link_to 'Add Trip', new_trip_path %>
-		</li>
-    <li>
+		</a>
+    <a class="item">
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-   </li>
-  </ul>
-</nav>
+   </a>
+  </div>
+
