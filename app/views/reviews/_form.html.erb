@@ -1,14 +1,17 @@
 <h1><%= @review.id ? "Edit Review" : "Create Review" %></h1>
 <hr />
-<%= form_with(model: @review, local: true, class: "ui form") do |f| %>
+<%= form_with(model:@review,local:true, class: "ui form") do |f| %>
   <%= f.label :rating %>
-  <%= f.number_field :rating, required: true, autofocus: true %>
+  <%= f.number_field :rating, required: true, autofocus: true, in: 0..100 , placeholder: 79%>
   <br />
-
   <%= f.label :body %>
-  <%= f.text_field :body, required: true %>
+  <%= f.text_field :body, required: true, placeholder: "I loved this trip, etc." %>
   <br />
-
-  <%= f.submit nil, class: "ui teal basic button" %>
-  
-  <% end %>
+  <br />
+  <%= f.label :author %>
+  <%= f.text_field :author, required: true, value:"Anonymous" %>
+  <br />
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.hidden_field :trip_id, value: @trip.id%>
+  <%= f.submit nil, class:"ui basic button" %>
+<% end %>
