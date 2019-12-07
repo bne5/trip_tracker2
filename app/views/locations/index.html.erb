@@ -1,3 +1,4 @@
 <h1><%= @trip.name %>: Locations</h1>
 <%= link_to 'Add Location', new_trip_location_path(@trip) %>
+<%= link_to "Address", location_addresses_path(@locations) %>
 <hr />
