@@ -1,14 +1,15 @@
 i = 0
-until User.all.length < 3
+until User.all.length > 3
 	str = ""
 	if i > 0
 		str = "#{i}"
 	end
-	User.create(
+	user = User.create(
 		:email                 => "test#{str}@test.com",
 		:password              => "password",
 		:password_confirmation => "password"
 	)
+	puts "New User! #{user.id}"
 	i+=1
 end
 
