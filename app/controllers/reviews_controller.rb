@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 	before_action :set_review, only: [:show, :edit, :destroy]
-
+	before_action :set_owner, only: [:edit, :destroy]
 	def index
 		@reviews = Review.all
   end
@@ -23,9 +23,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def edit
-		unless owner?
-			redirect_to reviews_path
-		end
+
 	end
 	
 	def update
@@ -37,24 +35,22 @@ class ReviewsController < ApplicationController
 	end
 
 	def destroy
-		unless owner?
-			redirect_to reviews_path
-		else
-			@review.destroy
-		end
+		@review.destroy
+		redirect_to reviews_path
 	end
+	
 	
 	private 
 		def set_review
 			@review = Review.find(params[:id])
 		end
 
+		def set_owner
+			@is_owner = current_user.id == @review.user_id
+		end
 		def review_params
 			params.require(:review).permit(:author,:rating,:body)
 		end
 
-		def owner?
-			current_user.id == @review.user_id
-		end
 
 end

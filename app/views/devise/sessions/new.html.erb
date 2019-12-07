@@ -1,9 +1,15 @@
 <h2>Log in</h2>
+<<<<<<< HEAD
+
+<form class="ui form">
+<%= form_with(model: resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+=======
 <div class="ui form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+>>>>>>> 5658f82eec2089400b2ddbb3562735efbf31ebf5
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -22,6 +28,8 @@
     <%= f.submit "Log in", class:"ui basic teal small button"%>
   </div>
 <% end %>
+</form>
+
 
 <%= render "devise/shared/links" %>
 </div>
