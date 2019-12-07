@@ -45,12 +45,16 @@ class ReviewsController < ApplicationController
 			@review = Review.find(params[:id])
 		end
 
+		def set_trip
+			@trip = Trip.find(params[:trip_id])
+		end
+
 		def set_owner
 			@is_owner = current_user.id == @review.user_id
 		end
-		def review_params
-			params.require(:review).permit(:author,:rating,:body)
-		end
 
+		def review_params
+			params.require(:review).permit(:rating,:body, :author)
+		end
 
 end
