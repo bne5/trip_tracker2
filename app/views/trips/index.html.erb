@@ -1,8 +1,29 @@
-<h1> Trips </h1>
-<%= link_to "Create a new trip", new_trip_path, class: "ui green button inverted" %> 
-<hr />
-<ul> 
+<div class="ui center aligned header">
+<br/>
+  <h1 class="ui huge header">T R I P S</h1>
+</div>
+<div class="ui center aligned header">
+  <%= link_to "Create a new trip", new_trip_path, class: "ui basic teal button" %> 
+</div>
+<br/> 
+<hr/>
+<div class="ui grid container "> 
+
 <% @trips.each do |trip| %>
-  <li> <h2> <%= link_to trip.name, trip %> <h2> </li>
+ <div class="sixteen wide mobile eight wide tablet four wide computer column">
+    <div class="ui card"> 
+      <div class="ui inverted segment"> 
+        <div class="content">
+          <div class="ui inverted segment"> 
+            <div class="ui center aligned header">
+                <div><%= link_to trip.name, trip, class: "ui white inverted header" %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% end %>
-</ul>
+
+</div>
