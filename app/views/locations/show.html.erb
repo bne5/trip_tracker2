@@ -1,9 +1,9 @@
-<div class="ui card">
-  <div class="content">
+<div class="ui container">
+  <div class="ui segment">
     <p class="header">
       <%= @location.name %>
     </p>
-    <%= link_to 'Edit', edit_location_path(@location) %> |
-    <%= link_to 'Back', locations_path %>
+    <%= link_to 'Edit', edit_location_path(@location), class:"ui teal basic button" %> |
+    <%= link_to 'Back', locations_path, class:"ui red basic button" %>
   </div>
 </div>
