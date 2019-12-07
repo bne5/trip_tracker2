@@ -1,2 +1,3 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<h1><%= @trip.name %>: Locations</h1>
+<%= link_to 'Add Location', new_trip_location_path(@trip) %>
+<hr />
