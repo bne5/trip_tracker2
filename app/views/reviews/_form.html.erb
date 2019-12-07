@@ -1,0 +1,14 @@
+<h1><%= @review.id ? "edit review" : "create review" %></h1>
+<hr />
+<%= form_with(model:@review,local:true, class: "ui form") do |f| %>
+  <%= f.label :raiting %>
+  <%= f.number_field :raiting, required: true, autofocus: true %>
+  <br />
+
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true %>
+  <br />
+
+  
+  <%= f.submit %>
+  <% end %>
