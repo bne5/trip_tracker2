@@ -1,11 +1,15 @@
-if User.all == nil
-	user = User.create(
-		:email                 => "test@test.com",
+i = 0
+until User.all.length < 3
+	str = ""
+	if i > 0
+		str = "#{i}"
+	end
+	User.create(
+		:email                 => "test#{str}@test.com",
 		:password              => "password",
 		:password_confirmation => "password"
 	)
-else
-	user = User.all[0]
+	i+=1
 end
 
 10.times do 
@@ -13,7 +17,7 @@ end
 		name: Faker::Nation.capital_city,
 		start_date: Faker::Date.between(from: 2.days.ago, to: 2.days.from_now),
 		end_date: Faker::Date.forward(days: 67),
-		user_id: user.id
+		user_id: User.all.sample.id
 	)
 	4.times do 
 		loc = Location.create(
@@ -29,6 +33,16 @@ end
 			location_id: loc.id
 		)
 	end
+	2.times do
+		author = User.find(trip.user_id).first_name == nil ? "Anonymous" : User.find(trip.user_id).first_name
+		Review.create(
+			author: author,
+			rating: rand(101),
+			body: Faker::TvShows::TheFreshPrinceOfBelAir.quote,
+			user_id: trip.user_id,
+			trip_id: trip.id
+		)
+  end
 end
 
 puts "Database seeded!"
